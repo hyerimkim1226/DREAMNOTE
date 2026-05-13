@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dream Note — LG CNS AM Inspire Camp 5기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Pretendard:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+/* ── RESET & ROOT ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:       #FDF0F3;
+  --surface:  #FFFFFF;
+  --rose:     #C9435A;
+  --rose-h:   #A8324A;
+  --rose-pale:#FBF0F3;
+  --rose-pale2:#F5E0E7;
+  --rose-b:   #EDD0DA;
+  --rose-mid: #E8A0B4;
+  --text:     #1E0F16;
+  --text2:    #8C5A6A;
+  --text3:    #C09AAA;
+  --serif:    'Cormorant Garamond', Georgia, serif;
+  --sans:     'Pretendard', -apple-system, sans-serif;
+  --r8: 8px; --r12: 12px; --r16: 16px; --r20: 20px; --r24: 24px; --r99: 99px;
+  --shadow: 0 2px 12px rgba(200,67,90,.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--rose);
+  padding: 52px 40px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 44px;
+  background: var(--bg);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+.hero-deco {
+  position: absolute;
+  top: -60px; right: -40px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.07);
+}
+.hero-deco2 {
+  position: absolute;
+  bottom: 20px; right: 80px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+}
+.hero-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+.hero-eyebrow {
+  font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+  margin-bottom: 12px;
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 6vw, 52px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  letter-spacing: -.5px;
+}
+.hero-title em { font-style: italic; color: rgba(255,255,255,.75); }
+.hero-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.72);
+  line-height: 1.7;
+  max-width: 400px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+  padding: 8px 18px;
+  border-radius: var(--r99);
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.22);
+  font-size: 12px;
+  color: rgba(255,255,255,.9);
+}
+
+/* ── NAV ── */
+.nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--rose-b);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--text2);
+  letter-spacing: .02em;
+}
+.nav-seg {
+  display: flex;
+  gap: 2px;
+  background: var(--rose-pale2);
+  border-radius: var(--r99);
+  padding: 3px;
+}
+.nsb {
+  padding: 7px 20px;
+  border-radius: var(--r99);
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-family: var(--sans);
+  color: var(--text2);
+  cursor: pointer;
+  transition: .18s;
+}
+.nsb.on {
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
+}
+.nsb:not(.on):hover { color: var(--rose); }
+
+/* ── BODY WRAP ── */
+.body-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 28px 64px;
+}
+
+/* ── STATUS ── */
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--r12);
+  background: var(--surface);
+  border: 1px solid var(--rose-b);
+  font-size: 12px;
+  color: var(--text2);
+  margin-bottom: 28px;
+}
+.sdot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--rose-mid);
+  flex-shrink: 0;
+  transition: background .3s;
+}
+.sdot.ok  { background: #6ec99a; }
+.sdot.err { background: #e8756a; }
+.sdot.spin { animation: spin 1s infinite; }
+@keyframes spin { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* ── SCREEN ── */
+.screen { display: none; }
+.screen.on { display: block; }
+
+/* ── FORM ── */
+.form-outer { max-width: 560px; margin: 0 auto; }
+.form-card {
+  background: var(--surface);
+  border-radius: var(--r24);
+  border: 1px solid var(--rose-b);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.form-banner {
+  background: var(--rose-pale2);
+  padding: 26px 32px 22px;
+  border-bottom: 1px solid var(--rose-b);
+}
+.form-banner-h {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -.3px;
+}
+.form-banner-s {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.6;
+}
+.form-body { padding: 28px 32px; }
+
+.edit-alert {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--r8);
+  background: var(--rose-pale2);
+  border: 1px solid var(--rose-b);
+  font-size: 12px;
+  color: var(--rose);
+  margin-bottom: 20px;
+}
+.edit-alert.on { display: flex; }
+
+.field { margin-bottom: 18px; }
+.flbl {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text2);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+.flbl .opt { font-weight: 400; color: var(--text3); text-transform: none; letter-spacing: 0; margin-left: 3px; }
+.fi {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--rose-b);
+  border-radius: var(--r12);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  font-family: var(--sans);
+  outline: none;
+  transition: .15s;
+  -webkit-appearance: none;
+}
+.fi:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(201,67,90,.1);
+}
+textarea.fi { resize: none; height: 76px; line-height: 1.6; }
+
+/* MBTI */
+.mbti-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 5px;
+  margin-top: 7px;
+}
+@media (max-width: 480px) { .mbti-grid { grid-template-columns: repeat(4, 1fr); } }
+.mchip {
+  padding: 7px 0;
+  text-align: center;
+  border-radius: var(--r8);
+  border: 1px solid var(--rose-b);
+  background: var(--surface);
+  font-size: 11px;
+  color: var(--text2);
+  cursor: pointer;
+  transition: .15s;
+  user-select: none;
+}
+.mchip.on {
+  background: var(--rose-pale2);
+  border-color: var(--rose-mid);
+  color: var(--rose);
+  font-weight: 500;
+}
+.mchip:not(.on):hover { border-color: var(--rose-mid); color: var(--rose); }
+
+/* KW ROW */
+.kw-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 7px;
+}
+@media (max-width: 480px) { .kw-row { grid-template-columns: 1fr; } }
+.kw-box {
+  background: var(--rose-pale);
+  border: 1px solid var(--rose-b);
+  border-radius: var(--r12);
+  padding: 12px 13px;
+}
+.kw-box-lbl {
+  font-size: 10px;
+  color: var(--text3);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.kw-box input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-family: var(--sans);
+  color: var(--text);
+  outline: none;
+}
+.kw-box input::placeholder { color: var(--text3); font-size: 12px; }
+
+/* BUTTONS */
+.btn-rose {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--r99);
+  background: var(--rose);
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: .18s;
+  margin-top: 8px;
+  letter-spacing: -.1px;
+}
+.btn-rose:hover { background: var(--rose-h); }
+.btn-rose:active { transform: scale(.98); }
+.btn-rose:disabled { opacity: .45; cursor: not-allowed; }
+.btn-ghost {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--r99);
+  background: transparent;
+  color: var(--text2);
+  border: 1px solid var(--rose-b);
+  font-size: 13px;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: .15s;
+  margin-top: 8px;
+  display: none;
+}
+.btn-ghost:hover { background: var(--rose-pale2); }
+
+/* ── BOARD ── */
+.board-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.board-h {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -.5px;
+  line-height: 1.25;
+}
+.board-h span { color: var(--rose); font-style: italic; }
+.bcnt {
+  background: var(--surface);
+  border: 1px solid var(--rose-b);
+  font-size: 12px;
+  color: var(--text2);
+  padding: 6px 16px;
+  border-radius: var(--r99);
+  white-space: nowrap;
+  align-self: center;
+}
+.filter-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.fb {
+  padding: 7px 16px;
+  border-radius: var(--r99);
+  border: 1px solid var(--rose-b);
+  font-size: 12px;
+  color: var(--text2);
+  cursor: pointer;
+  background: var(--surface);
+  transition: .15s;
+  font-family: var(--sans);
+}
+.fb.on { background: var(--rose); color: #fff; border-color: var(--rose); }
+.fb:not(.on):hover { border-color: var(--rose-mid); color: var(--rose); }
+
+/* CARD GRID */
+.cgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  gap: 16px;
+}
+.dcard {
+  background: var(--surface);
+  border-radius: var(--r16);
+  border: 1px solid var(--rose-b);
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: .2s;
+  box-shadow: var(--shadow);
+}
+.dcard:hover { border-color: var(--rose-mid); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(200,67,90,.12); }
+.dcard:hover .dca { opacity: 1; transform: translateY(0); }
+.dcard-stripe { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--rose); }
+.dca {
+  position: absolute;
+  top: 13px; right: 11px;
+  display: flex;
+  gap: 5px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: .18s;
+}
+.dact {
+  width: 28px; height: 28px;
+  border-radius: var(--r8);
+  border: 1px solid var(--rose-b);
+  background: var(--surface);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--text3);
+  transition: .15s;
+}
+.dact.e:hover { background: var(--rose-pale2); color: var(--rose); border-color: var(--rose-mid); }
+.dact.d:hover { background: #fff0f0; color: #c2302f; border-color: #f09595; }
+.dcard-team {
+  font-size: 10px; font-weight: 500; color: #fff;
+  background: var(--rose);
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: var(--r99);
+  margin-bottom: 10px;
+}
+.dcard-name { font-family: var(--serif); font-size: 17px; color: var(--text); margin-bottom: 2px; letter-spacing: -.2px; }
+.dcard-mbti { font-size: 11px; color: var(--text3); margin-bottom: 10px; min-height: 14px; }
+.dcard-tags { display: flex; flex-direction: column; gap: 5px; }
+.dtag {
+  font-size: 11px;
+  padding: 4px 9px;
+  border-radius: var(--r8);
+  background: var(--rose-pale);
+  color: var(--rose);
+  border: 1px solid var(--rose-b);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.dcard-vow {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--text2);
+  border-top: 1px solid var(--rose-b);
+  padding-top: 9px;
+  line-height: 1.6;
+  font-style: italic;
+}
+.dcard-ts { margin-top: 6px; font-size: 10px; color: var(--text3); }
+
+@keyframes cin { from { opacity:0; transform:scale(.86); } to { opacity:1; transform:scale(1); } }
+@keyframes cout { to { opacity:0; transform:scale(.86); } }
+.card-in  { animation: cin .3s cubic-bezier(.34,1.56,.64,1); }
+.card-out { animation: cout .18s ease forwards; }
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 72px 20px;
+  color: var(--text3);
+}
+.empty i { font-size: 40px; display: block; margin-bottom: 14px; color: var(--rose-b); }
+.empty-h { font-family: var(--serif); font-size: 18px; color: var(--text3); margin-bottom: 6px; }
+.empty-s { font-size: 13px; }
+
+/* ── DELETE MODAL ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(30,15,22,.35);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.on { display: flex; }
+.modal-box {
+  background: var(--surface);
+  border-radius: var(--r24);
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  border: 1px solid var(--rose-b);
+  box-shadow: 0 16px 40px rgba(0,0,0,.15);
+}
+.modal-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--r12);
+  background: #fff0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #c2302f;
+  margin: 0 auto 16px;
+}
+.modal-box h3 {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.modal-box p {
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 24px;
+  line-height: 1.65;
+}
+.modal-btns { display: flex; gap: 8px; }
+.mb-c {
+  flex: 1; padding: 11px;
+  border-radius: var(--r99);
+  border: 1px solid var(--rose-b);
+  background: transparent;
+  font-size: 13px;
+  font-family: var(--sans);
+  color: var(--text2);
+  cursor: pointer;
+  transition: .15s;
+}
+.mb-c:hover { background: var(--rose-pale2); }
+.mb-d {
+  flex: 1; padding: 11px;
+  border-radius: var(--r99);
+  border: none;
+  background: #c2302f;
+  color: #fff;
+  font-size: 13px;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: .15s;
+}
+.mb-d:hover { background: #a52424; }
+
+/* ── DASH ── */
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+@media (max-width: 480px) { .dash-stats { grid-template-columns: 1fr; } }
+.ds {
+  background: var(--surface);
+  border: 1px solid var(--rose-b);
+  border-radius: var(--r16);
+  padding: 22px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.ds-n { font-family: var(--serif); font-size: 32px; color: var(--rose); margin-bottom: 4px; letter-spacing: -.5px; }
+.ds-l { font-size: 12px; color: var(--text3); }
+.dash-sec {
+  background: var(--surface);
+  border: 1px solid var(--rose-b);
+  border-radius: var(--r16);
+  padding: 22px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+}
+.dash-sec-h {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mpill {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 11px;
+  border-radius: var(--r99);
+  background: var(--rose-pale2);
+  color: var(--rose);
+  border: 1px solid var(--rose-b);
+  margin: 3px;
+}
+.kcloud { display: flex; flex-wrap: wrap; gap: 8px; }
+.kct {
+  padding: 6px 14px;
+  border-radius: var(--r99);
+  border: 1px solid var(--rose-b);
+  font-size: 12px;
+  color: var(--text2);
+  background: var(--surface);
+}
+.kct.top { background: var(--rose-pale2); color: var(--rose); border-color: var(--rose-mid); font-weight: 500; }
+.nod { font-size: 13px; color: var(--text3); }
+
+/* ── TOAST ── */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--text);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: var(--r99);
+  font-size: 13px;
+  z-index: 9999;
+  transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* LOADING SKELETON */
+.skeleton {
+  background: linear-gradient(90deg, var(--rose-pale2) 25%, var(--rose-pale) 50%, var(--rose-pale2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: var(--r8);
+  height: 14px;
+  margin-bottom: 8px;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-deco"></div>
+  <div class="hero-deco2"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">LG CNS AM Inspire Camp 5기</div>
+    <div class="hero-title">My Dream<br><em>Note</em></div>
+    <div class="hero-sub">LG CNS AM Inspire Camp 5기에서 이루고 싶은 목표를 3가지 키워드로 표현해요</div>
+    <div class="hero-badge"><i class="ti ti-star"></i> 나만의 드림카드를 만들어보세요</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Dream Board</div>
+    <div class="nav-seg">
+      <button class="nsb on" id="p-input" onclick="go('input')"><i class="ti ti-edit"></i> 작성</button>
+      <button class="nsb" id="p-board" onclick="go('board')"><i class="ti ti-layout-grid"></i> 보드</button>
+      <button class="nsb" id="p-dash"  onclick="go('dash')"><i class="ti ti-chart-bar"></i> 현황</button>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="body-wrap">
+
+  <!-- STATUS -->
+  <div class="status">
+    <div class="sdot spin" id="sdot"></div>
+    <span id="stxt">서버 연결 중...</span>
+  </div>
+
+  <!-- ① INPUT -->
+  <div id="sc-input" class="screen on">
+    <div class="form-outer">
+      <div class="form-card">
+        <div class="form-banner">
+          <div class="form-banner-h">나의 드림노트 작성</div>
+          <div class="form-banner-s">LG CNS AM Inspire Camp 5기에서 이루고 싶은 목표를<br>3가지 키워드로 표현해요</div>
+        </div>
+        <div class="form-body">
+          <div class="edit-alert" id="edit-alert"><i class="ti ti-pencil"></i> 수정 모드 — 내용을 변경하고 저장하세요</div>
+          <div class="field">
+            <label class="flbl">이름</label>
+            <input class="fi" id="f-name" type="text" placeholder="이름을 입력하세요">
+          </div>
+          <div class="field">
+            <label class="flbl">조</label>
+            <select class="fi" id="f-team">
+              <option value="">— 선택하세요 —</option>
+              <option>1조</option><option>2조</option><option>3조</option>
+              <option>4조</option><option>5조</option><option>6조</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="flbl">MBTI <span class="opt">선택</span></label>
+            <div class="mbti-grid" id="mbti-grid">
+              <div class="mchip" data-v="INTJ">INTJ</div><div class="mchip" data-v="INTP">INTP</div>
+              <div class="mchip" data-v="ENTJ">ENTJ</div><div class="mchip" data-v="ENTP">ENTP</div>
+              <div class="mchip" data-v="INFJ">INFJ</div><div class="mchip" data-v="INFP">INFP</div>
+              <div class="mchip" data-v="ENFJ">ENFJ</div><div class="mchip" data-v="ENFP">ENFP</div>
+              <div class="mchip" data-v="ISTJ">ISTJ</div><div class="mchip" data-v="ISFJ">ISFJ</div>
+              <div class="mchip" data-v="ESTJ">ESTJ</div><div class="mchip" data-v="ESFJ">ESFJ</div>
+              <div class="mchip" data-v="ISTP">ISTP</div><div class="mchip" data-v="ISFP">ISFP</div>
+              <div class="mchip" data-v="ESTP">ESTP</div><div class="mchip" data-v="ESFP">ESFP</div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="flbl">목표 키워드 3가지</label>
+            <div class="kw-row">
+              <div class="kw-box">
+                <div class="kw-box-lbl"><i class="ti ti-target"></i>목표</div>
+                <input id="k1" placeholder="예: 풀스택 개발">
+              </div>
+              <div class="kw-box">
+                <div class="kw-box-lbl"><i class="ti ti-bulb"></i>배우고 싶은 것</div>
+                <input id="k2" placeholder="예: AI API 연동">
+              </div>
+              <div class="kw-box">
+                <div class="kw-box-lbl"><i class="ti ti-users"></i>함께하고 싶은 것</div>
+                <input id="k3" placeholder="예: 해커톤 우승">
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="flbl">한 줄 다짐 <span class="opt">선택</span></label>
+            <textarea class="fi" id="f-vow" placeholder="5기를 마칠 때 어떤 사람이 되어 있고 싶나요?"></textarea>
+          </div>
+          <button class="btn-rose" id="btn-s" onclick="submitCard()">
+            <i class="ti ti-send"></i> <span id="btn-lbl">드림보드에 올리기</span>
+          </button>
+          <button class="btn-ghost" id="btn-c" onclick="cancelEdit()">취소하고 보드로 돌아가기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ② BOARD -->
+  <div id="sc-board" class="screen">
+    <div class="board-top">
+      <div class="board-h">모두의 드림보드<br><span>꿈을 함께 그려요</span></div>
+      <span class="bcnt" id="bcnt">0명 참여</span>
+    </div>
+    <div class="filter-row">
+      <button class="fb on" onclick="doFilter('all',this)">전체</button>
+      <button class="fb" onclick="doFilter('1조',this)">1조</button>
+      <button class="fb" onclick="doFilter('2조',this)">2조</button>
+      <button class="fb" onclick="doFilter('3조',this)">3조</button>
+      <button class="fb" onclick="doFilter('4조',this)">4조</button>
+      <button class="fb" onclick="doFilter('5조',this)">5조</button>
+      <button class="fb" onclick="doFilter('6조',this)">6조</button>
+    </div>
+    <div class="cgrid" id="cgrid"></div>
+  </div>
+
+  <!-- ③ DASH -->
+  <div id="sc-dash" class="screen">
+    <div class="dash-stats">
+      <div class="ds"><div class="ds-n" id="d-tot">0</div><div class="ds-l">전체 참여자</div></div>
+      <div class="ds"><div class="ds-n" id="d-tm">0</div><div class="ds-l">참여 조</div></div>
+      <div class="ds"><div class="ds-n" id="d-mb">—</div><div class="ds-l">최다 MBTI</div></div>
+    </div>
+    <div class="dash-sec">
+      <div class="dash-sec-h"><i class="ti ti-users" style="color:var(--rose-mid)"></i> 조별 현황</div>
+      <div id="d-tl"><p class="nod">아직 데이터가 없어요</p></div>
+    </div>
+    <div class="dash-sec">
+      <div class="dash-sec-h"><i class="ti ti-stars" style="color:var(--rose-mid)"></i> 5기 목표 키워드</div>
+      <div class="kcloud" id="d-kw"><p class="nod">아직 데이터가 없어요</p></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- DELETE MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon"><i class="ti ti-trash"></i></div>
+    <h3>카드를 삭제할까요?</h3>
+    <p id="modal-msg">삭제 후에는 되돌릴 수 없어요.</p>
+    <div class="modal-btns">
+      <button class="mb-c" onclick="closeMod()">취소</button>
+      <button class="mb-d" onclick="confirmDel()"><i class="ti ti-trash"></i> 삭제</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================================
+//  ★ 여기에 Apps Script 배포 URL을 붙여넣으세요 ★
+// ============================================================
+const API = "https://script.google.com/macros/s/AKfycbx7eGlpjsBv8aRgksLMxjfsbY0D7V91SV1Be41tLOi-6E3II8R3EbJ6joRnORhIdmXj/exec";
+// ============================================================
+
+let cards = [], mbtiSel = '', filterSel = 'all', editId = null, delId = null;
+
+// ── INIT ──
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.mchip').forEach(el => {
+    el.addEventListener('click', () => {
+      const v = el.dataset.v;
+      document.querySelectorAll('.mchip').forEach(c => c.classList.remove('on'));
+      mbtiSel = mbtiSel === v ? '' : v;
+      if (mbtiSel) el.classList.add('on');
+    });
+  });
+  loadCards();
+});
+
+// ── API ──
+async function apiGet(action, params = '') {
+  const r = await fetch(`${API}?action=${action}${params}`);
+  return r.json();
+}
+async function apiPost(action, data) {
+  const r = await fetch(`${API}?action=${action}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+    mode: 'cors'
+  });
+  return r.json();
+}
+
+async function loadCards() {
+  setSt('spin', '불러오는 중...');
+  try {
+    const res = await apiGet('getAll');
+    if (res.ok) {
+      cards = res.cards;
+      setSt('ok', `연결됨 · ${cards.length}명 참여 중`);
+      renderBoard();
+    } else {
+      throw new Error(res.error);
+    }
+  } catch(e) {
+    setSt('err', 'API URL을 설정해주세요 (index.html 상단 API 변수)');
+  }
+}
+
+// ── SCREENS ──
+function go(id) {
+  ['input','board','dash'].forEach(s => {
+    document.getElementById('sc-' + s).classList.toggle('on', s === id);
+    document.getElementById('p-' + s).classList.toggle('on', s === id);
+  });
+  if (id === 'board') renderBoard();
+  if (id === 'dash') { loadCards().then(renderDash); }
+}
+
+// ── FORM ──
+function clearForm() {
+  ['f-name','k1','k2','k3','f-vow'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('f-team').value = '';
+  mbtiSel = '';
+  document.querySelectorAll('.mchip').forEach(c => c.classList.remove('on'));
+}
+function setEditMode(card) {
+  editId = card.id;
+  document.getElementById('f-name').value = card.name;
+  document.getElementById('f-team').value = card.team;
+  document.getElementById('k1').value = card.k1;
+  document.getElementById('k2').value = card.k2;
+  document.getElementById('k3').value = card.k3;
+  document.getElementById('f-vow').value = card.vow || '';
+  mbtiSel = card.mbti || '';
+  document.querySelectorAll('.mchip').forEach(c => c.classList.toggle('on', c.dataset.v === mbtiSel));
+  document.getElementById('btn-lbl').textContent = '수정 저장하기';
+  document.getElementById('btn-c').style.display = 'block';
+  document.getElementById('edit-alert').classList.add('on');
+}
+function resetEditMode() {
+  editId = null;
+  document.getElementById('btn-lbl').textContent = '드림보드에 올리기';
+  document.getElementById('btn-c').style.display = 'none';
+  document.getElementById('edit-alert').classList.remove('on');
+}
+function cancelEdit() { clearForm(); resetEditMode(); go('board'); }
+
+async function submitCard() {
+  const name = document.getElementById('f-name').value.trim();
+  const team = document.getElementById('f-team').value;
+  const k1   = document.getElementById('k1').value.trim();
+  const k2   = document.getElementById('k2').value.trim();
+  const k3   = document.getElementById('k3').value.trim();
+  const vow  = document.getElementById('f-vow').value.trim();
+  if (!name || !team || !k1 || !k2 || !k3) {
+    showToast('이름, 조, 키워드 3가지를 모두 입력해주세요');
+    return;
+  }
+  const btn = document.getElementById('btn-s');
+  btn.disabled = true;
+  setSt('spin', '저장 중...');
+  try {
+    let res;
+    if (editId !== null) {
+      res = await apiPost('update', { id: editId, name, team, mbti: mbtiSel, k1, k2, k3, vow });
+      if (res.ok) {
+        const i = cards.findIndex(c => c.id == editId);
+        if (i > -1) cards[i] = { ...cards[i], name, team, mbti: mbtiSel, k1, k2, k3, vow };
+        showToast('수정되었어요');
+      }
+    } else {
+      res = await apiPost('add', { name, team, mbti: mbtiSel, k1, k2, k3, vow });
+      if (res.ok) {
+        cards.push({ id: res.id, name, team, mbti: mbtiSel, k1, k2, k3, vow });
+        showToast('드림보드에 올렸어요!');
+      }
+    }
+    clearForm(); resetEditMode();
+    setSt('ok', `저장 완료 · ${cards.length}명 참여 중`);
+    go('board');
+  } catch(e) {
+    showToast('저장에 실패했어요. 잠시 후 다시 시도해주세요.');
+    setSt('err', '저장 실패');
+  }
+  btn.disabled = false;
+}
+
+// ── BOARD ──
+function renderBoard() {
+  const grid = document.getElementById('cgrid');
+  const list = filterSel === 'all' ? cards : cards.filter(c => c.team === filterSel);
+  document.getElementById('bcnt').textContent = cards.length + '명 참여';
+  if (!list.length) {
+    grid.innerHTML = `
+      <div class="empty">
+        <i class="ti ti-seeding"></i>
+        <div class="empty-h">${filterSel === 'all' ? '아직 아무도 없어요' : '이 조에는 아직 참여자가 없어요'}</div>
+        <div class="empty-s">${filterSel === 'all' ? '첫 번째로 드림노트를 작성해보세요' : ''}</div>
+      </div>`;
+    return;
+  }
+  grid.innerHTML = list.map(c => `
+    <div class="dcard card-in" data-id="${c.id}">
+      <div class="dcard-stripe"></div>
+      <div class="dca">
+        <button class="dact e" onclick="openEdit('${c.id}')" aria-label="수정"><i class="ti ti-pencil"></i></button>
+        <button class="dact d" onclick="openDel('${c.id}')" aria-label="삭제"><i class="ti ti-trash"></i></button>
+      </div>
+      <span class="dcard-team">${c.team}</span>
+      <div class="dcard-name">${c.name}</div>
+      <div class="dcard-mbti">${c.mbti || ''}</div>
+      <div class="dcard-tags">
+        <span class="dtag"><i class="ti ti-target" style="font-size:11px"></i>${c.k1}</span>
+        <span class="dtag"><i class="ti ti-bulb" style="font-size:11px"></i>${c.k2}</span>
+        <span class="dtag"><i class="ti ti-users" style="font-size:11px"></i>${c.k3}</span>
+      </div>
+      ${c.vow ? `<div class="dcard-vow">"${c.vow}"</div>` : ''}
+      ${c.ts  ? `<div class="dcard-ts">${c.ts} 작성</div>` : ''}
+    </div>
+  `).join('');
+}
+
+function doFilter(team, btn) {
+  filterSel = team;
+  document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  renderBoard();
+}
+
+// ── EDIT / DELETE ──
+function openEdit(id) {
+  const card = cards.find(c => c.id == id);
+  if (card) { setEditMode(card); go('input'); }
+}
+function openDel(id) {
+  delId = id;
+  const c = cards.find(c => c.id == id);
+  document.getElementById('modal-msg').innerHTML =
+    `<strong>${c.name}</strong> (${c.team})의 카드를 삭제할까요?<br>삭제 후에는 되돌릴 수 없어요.`;
+  document.getElementById('modal').classList.add('on');
+}
+function closeMod() { delId = null; document.getElementById('modal').classList.remove('on'); }
+async function confirmDel() {
+  if (!delId) return;
+  const el = document.querySelector(`[data-id="${delId}"]`);
+  const doRemove = async () => {
+    setSt('spin', '삭제 중...');
+    try {
+      const res = await apiGet('delete', `&id=${delId}`);
+      if (res.ok) {
+        cards = cards.filter(c => c.id != delId);
+        showToast('삭제되었어요');
+        setSt('ok', `저장 완료 · ${cards.length}명 참여 중`);
+        renderBoard();
+      }
+    } catch(e) { showToast('삭제 실패. 다시 시도해주세요.'); }
+    closeMod();
+  };
+  if (el) { el.classList.add('card-out'); setTimeout(doRemove, 180); }
+  else await doRemove();
+}
+
+// ── DASH ──
+function renderDash() {
+  document.getElementById('d-tot').textContent = cards.length;
+  document.getElementById('d-tm').textContent  = new Set(cards.map(c => c.team)).size;
+  const mm = {};
+  cards.forEach(c => { if (c.mbti) mm[c.mbti] = (mm[c.mbti] || 0) + 1; });
+  const top = Object.entries(mm).sort((a,b) => b[1]-a[1])[0];
+  document.getElementById('d-mb').textContent = top ? top[0] : '—';
+  const tl = document.getElementById('d-tl');
+  if (!cards.length) { tl.innerHTML = '<p class="nod">아직 데이터가 없어요</p>'; }
+  else {
+    const by = {};
+    cards.forEach(c => { (by[c.team] = by[c.team] || []).push(c); });
+    tl.innerHTML = Object.entries(by).sort((a,b) => a[0].localeCompare(b[0])).map(([t,ms]) =>
+      `<div style="margin-bottom:12px">
+        <div style="font-size:11px;color:var(--text3);margin-bottom:5px">${t} · ${ms.length}명</div>
+        <div>${ms.map(m=>`<span class="mpill">${m.name}${m.mbti?' · '+m.mbti:''}</span>`).join('')}</div>
+      </div>`
+    ).join('');
+  }
+  const kw = document.getElementById('d-kw');
+  const km = {};
+  cards.forEach(c => { [c.k1,c.k2,c.k3].forEach(k => { if(k) km[k]=(km[k]||0)+1; }); });
+  if (!Object.keys(km).length) { kw.innerHTML = '<p class="nod">아직 데이터가 없어요</p>'; }
+  else {
+    const sk = Object.entries(km).sort((a,b) => b[1]-a[1]);
+    kw.innerHTML = sk.map(([k,n]) =>
+      `<span class="kct${n===sk[0][1]?' top':''}">${k}${n>1?' ×'+n:''}</span>`
+    ).join('');
+  }
+}
+
+// ── UTILS ──
+function setSt(state, msg) {
+  const d = document.getElementById('sdot');
+  d.className = 'sdot' + (state==='ok'?' ok' : state==='err'?' err' : ' spin');
+  document.getElementById('stxt').textContent = msg;
+}
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+</script>
+</body>
+</html>
